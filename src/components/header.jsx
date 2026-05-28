@@ -1,5 +1,5 @@
 export const Header = ({ tab, setTab, showSearch, searchQuery, setSearchQuery, onSearch, onAuthClick, currentUser, onLogout, onProfileClick }) => (  <div className="header">
-    <div className="header-top" style={{ backgroundImage: "url('/images/top-banner.png')", backgroundSize: "100% auto", backgroundPosition: "center", backgroundRepeat: "no-repeat", margin: "0 -40px 0", padding: "18px 40px 14px" }}>
+    <div className="header-top">
       <div className="logo">
         MY S<span className="logo-outline">H</span>ELF
       </div>
@@ -19,6 +19,7 @@ export const Header = ({ tab, setTab, showSearch, searchQuery, setSearchQuery, o
       )}
     </div>
 
+    <div className="branch-divider" />
     <div className="nav">
       <button className={`nav-tab ${tab === 0 ? "active" : ""}`} onClick={() => setTab(0)}>
         Нова підбірка

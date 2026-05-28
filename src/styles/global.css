@@ -1,5 +1,5 @@
 /* ── fonts ─────────────────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&family=Varela+Round&family=Comfortaa:wght@400;600;700&family=Unbounded:wght@400;700;900&family=M+PLUS+Rounded+1c:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Unbounded:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
 :root {
   --yellow: #ebc213;
   --cream:  #fffcc4;
@@ -12,41 +12,46 @@
 
 /* ── reset ───────────────────────────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--dark); }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--dark); }
 .app { padding: 0; margin: 0; }
 
 /* ── header ──────────────────────────────────────────────────────────────────── */
 .home-banner { width: 100%; height: 150px; display: block; object-fit: cover; object-position: center top; }
 .header { background: var(--cream); padding: 0 40px 0; border-bottom: none; }
 .header-top { display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 14px; min-height: 160px; }
+    margin-bottom: 14px; min-height: 160px; position: relative;
+    margin: 0 -40px 14px; padding: 18px 40px 14px;
+    background: #1a1a1a; border-bottom: 5px solid #000; }
 .logo {
-  font-family: 'Poppins', serif;
+  position: relative; z-index: 1;
+  font-family: 'Space Grotesk', sans-serif;
   font-size: 7rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--yellow);
-  letter-spacing: 1px;
+  letter-spacing: -3px;
   text-transform: uppercase;
-  -webkit-text-stroke: 8px var(--border);
+  -webkit-text-stroke: 6px #c49015;
   paint-order: stroke fill;
-  filter: drop-shadow(0 0 4px #f7cbe8) drop-shadow(0 0 4px #f7cbe8) drop-shadow(0 0 4px #f7cbe8) drop-shadow(0 0 4px #f7cbe8);
 }
 .logo-outline {
-  -webkit-text-stroke: 6px var(--border);
+  -webkit-text-stroke: 6px #c49015;
   color: transparent;
   paint-order: stroke fill;
 }
-.login-btn { font-family: 'Varela Round', sans-serif; font-size: 1.1rem; font-weight: 900;
-              color: var(--border); background: none; border: none; cursor: pointer;
+.login-btn { position: relative; z-index: 1; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 600;
+              color: var(--yellow); background: none; border: none; cursor: pointer;
               text-decoration: underline; padding: 6px 10px; }
+
+/* ── branch divider ──────────────────────────────────────────────────────────── */
+.branch-divider { display: none; }
 
 /* ── nav ─────────────────────────────────────────────────────────────────────── */
 .nav               { display: flex; gap: 0; align-items: center; }
-.nav-tab { font-family: 'Varela Round', sans-serif; font-size: 1.2rem; font-weight: 900;
+.nav-tab { font-family: 'DM Sans', sans-serif; font-size: 1.1rem; font-weight: 600;
           color: var(--dark); background: none; border: none; cursor: pointer;
           padding: 10px 24px 14px; border-bottom: 3px solid transparent;
           transition: all .2s; text-decoration: none; }
-.nav-tab.active { border-bottom: 3px solid var(--dark); text-decoration: none; }
+.nav-tab.active { border-bottom: 3px solid var(--yellow); color: var(--dark); text-decoration: none; }
 .nav-sep           { color: var(--border); font-size: 1.2rem; padding: 0 4px 10px; }
 .filter-btn { margin-left: auto; background: var(--yellow); border: 3px solid var(--border);
   border-radius: 70px; padding: 12px 36px; font-family: 'Unbounded', sans-serif;
@@ -57,13 +62,13 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 
 /* ── search bar ──────────────────────────────────────────────────────────────── */
 .search-bar { display: flex; gap: 12px; padding: 28px 3px 0; width: 100%; }
-.search-input      { flex: 1; border: 2.3px solid var(--border); border-radius: 25px; padding: 12px 22px;
-                     font-family: 'Comfortaa', sans-serif; font-size: 1rem; background: #fff;
+.search-input      { flex: 1; border: 2px solid var(--border); border-radius: 25px; padding: 13px 24px;
+                     font-family: 'DM Sans', sans-serif; font-size: 1rem; background: #fff;
                      outline: none; transition: border .2s; }
 .search-input:focus { border-color: var(--yellow); }
 .search-btn        { background: var(--border); border: 2px solid var(--border); border-radius: 30px;
-                     padding: 14px 48px; font-family: 'Varela Round', sans-serif; color: var(--cream2);
-                     font-size: 1.2rem; font-weight: 900; cursor: pointer; transition: transform .15s; }
+                     padding: 14px 48px; font-family: 'DM Sans', sans-serif; color: var(--cream2);
+                     font-size: 1rem; font-weight: 700; cursor: pointer; transition: transform .15s; }
 .search-btn:hover  { transform: scale(1.04); }
 
 /* ── shelf frame ─────────────────────────────────────────────────────────────── */
@@ -95,13 +100,13 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 .detail-author     { color: var(--yellow); font-weight: 700; font-family: 'Unbounded', sans-serif; font-size: 1.0rem; text-align: center; }
 .detail-right      { flex: 1; padding-left: 20px; }
 .meta              { display: flex; flex-direction: column; gap: 4px; margin-bottom: 24px; }
-.meta span         { font-size: .95rem; font-family: 'Varela Round', sans-serif; }
-.anno-title        { font-family: 'Varela Round', sans-serif; font-size: 2.6rem;
+.meta span         { font-size: .95rem; font-family: 'DM Sans', sans-serif; }
+.anno-title        { font-family: 'DM Sans', sans-serif; font-size: 2.6rem;
                      color: var(--yellow); margin-bottom: 14px; font-weight: 900; }
 .anno-box          { background: var(--cream2); border-radius: 14px; padding: 20px 24px;
-                     min-height: 180px; font-size: .95rem; font-family: 'Comfortaa', sans-serif;
+                     min-height: 180px; font-size: .95rem; font-family: 'DM Sans', sans-serif;
                      line-height: 1.7; color: #333; border: 1.5px solid var(--border); }
-.anno-box.loading  { color: #aaa; font-family: 'Varela Round', sans-serif; }
+.anno-box.loading  { color: #aaa; font-family: 'DM Sans', sans-serif; }
 .back-btn { background: var(--yellow); border: 3px solid var(--border); border-radius: 30px; padding: 12px 32px;
   font-family: 'Unbounded', sans-serif; font-size: 1.1rem; font-weight: 700;
   cursor: pointer; align-self: flex-end; transition: transform .15s;
@@ -110,7 +115,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 
 /* ── mood tab ────────────────────────────────────────────────────────────────── */
 .mood-section      { padding: 40px; margin: 0; width: 100%; }
-.mood-title        { font-family: 'Playfair Display', serif; font-size: 2.4rem; margin-bottom: 10px; }
+.mood-title        { font-family: 'Playfair Display', serif; font-size: 2.6rem; margin-bottom: 10px; font-style: italic; }
 .mood-sub          { color: var(--gray); margin-bottom: 28px; line-height: 1.6; font-size: 1.05rem; }
 .mood-textarea     { width: 100%; border: 2px solid #e8d97a; border-radius: 14px; padding: 18px 22px;
                      font-family: 'Nunito', sans-serif; font-size: 1.05rem; background: var(--cream2);
@@ -155,7 +160,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 .modal-box-wide .modal-label { padding: 4px 12px; font-size: .75rem; }
 .modal-close        { position: absolute; top: 16px; right: 20px; background: none; border: none;
   font-size: 1.0rem; cursor: pointer; color: var(--gray); }
-.modal-logo { font-family: 'Poppins', sans-serif; font-size: 5.5rem; font-weight: 700;
+.modal-logo { font-family: 'Space Grotesk', sans-serif; font-size: 5.5rem; font-weight: 700;
   color: var(--yellow); -webkit-text-stroke: 3px var(--yellow); }
 .modal-title        { font-family: 'Unbounded', sans-serif; font-size: 1.1rem;
   font-weight: 700; color: var(--dark); margin-bottom: 4px; }
@@ -169,13 +174,13 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
   border-radius: 50px; padding: 14px; font-family: 'Unbounded', sans-serif;
   font-size: 1rem; font-weight: 700; cursor: pointer; color: var(--dark); transition: transform .15s; }
 .modal-btn-secondary:hover { transform: scale(1.03); }
-.modal-hint { font-size: .9rem; color: var(--brown); font-weight: 900; font-family: 'Comfortaa', sans-serif;
+.modal-hint { font-size: .9rem; color: var(--brown); font-weight: 900; font-family: 'DM Sans', sans-serif;
               -webkit-text-stroke: 0.8px var(--brown); margin-top: 16px; }
 .modal-input        { width: 100%; border: 2px solid var(--border); border-radius: 30px;
-  padding: 12px 20px; font-family: 'Comfortaa', sans-serif; font-size: 1rem;
+  padding: 12px 20px; font-family: 'DM Sans', sans-serif; font-size: 1rem;
   background: #fff; outline: none; }
 .modal-back { background: none; border: none; color: var(--brown); cursor: pointer;
-              font-size: .9rem; font-weight: 900; font-family: 'Comfortaa', sans-serif;
+              font-size: .9rem; font-weight: 900; font-family: 'DM Sans', sans-serif;
               -webkit-text-stroke: 0.8px var(--brown); }
 .modal-deco-bottom { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
   width: 100%; pointer-events: none; z-index: -1; }
@@ -187,7 +192,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
   font-weight: 700; cursor: pointer; transition: transform .15s; }
 .genre-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
 .genre-btn { border: 2px solid var(--border); border-radius: 30px; padding: 8px 16px;
-  background: #fff; font-family: 'Comfortaa', sans-serif; font-size: .85rem;
+  background: #fff; font-family: 'DM Sans', sans-serif; font-size: .85rem;
   cursor: pointer; transition: all .2s; }
 .genre-btn.selected { background: #f9c6d0; border-color: #e08090; }
 .goal-display { font-size: 4rem; font-weight: 900; font-family: 'Unbounded', sans-serif;
@@ -199,7 +204,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 .profile-form { display: flex; gap: 20px; width: 100%; }
 .profile-form-left { display: flex; flex-direction: column; gap: 10px; flex: 1; }
 .modal-textarea { width: 100%; border: 2px solid var(--border); border-radius: 14px;
-  padding: 12px; font-family: 'Comfortaa', sans-serif; font-size: .9rem;
+  padding: 12px; font-family: 'DM Sans', sans-serif; font-size: .9rem;
   min-height: 80px; outline: none; resize: none; }
 .profile-photo-box { width: 160px; height: 160px; border: 2px solid #e08090;
   border-radius: 14px; background: #fde8e8; display: flex; align-items: center;
@@ -207,9 +212,9 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
   cursor: pointer; flex-shrink: 0; }
 
 /* ── user badge в хедері ── */
-.user-badge { display: flex; align-items: center; gap: 10px; cursor: pointer; }
-.user-nickname { font-family: 'Varela Round', sans-serif; font-size: 1rem;
-  font-weight: 700; color: var(--border); }
+.user-badge { position: relative; z-index: 1; display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.user-nickname { font-family: 'DM Sans', sans-serif; font-size: 1rem;
+  font-weight: 700; color: var(--yellow); }
 .user-avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--yellow);
   border: 3px solid var(--border); display: flex; align-items: center; justify-content: center;
   font-weight: 900; font-size: 1.2rem; overflow: hidden; }
@@ -221,7 +226,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
   border-radius: 24px; width: 700px; padding: 32px; display: flex;
   flex-direction: column; gap: 20px; position: relative;}
 .profile-header { display: flex; align-items: flex-start; gap: 20px; }
-.profile-logo { font-family: 'Poppins', serif;
+.profile-logo { font-family: 'Space Grotesk', sans-serif;
   font-size: 3.0rem;
   font-weight: 700;
   color: var(--yellow);
@@ -236,7 +241,7 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
   paint-order: stroke fill;
 }
 .profile-info { margin-top: 10px; margin-right: 60px; }
-.profile-nickname { font-family: 'Varela Round', sans-serif; color: var(--border);
+.profile-nickname { font-family: 'DM Sans', sans-serif; color: var(--border);
   font-size: 1.2rem; font-weight: 700; margin-bottom: 4px; }
 .profile-name { font-family: 'Unbounded', sans-serif; font-size: 1.6rem; font-weight: 900; }
 .profile-photo-view { width: 160px; height: 160px; border: 2px solid #e08090;
@@ -246,13 +251,13 @@ body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(-
 .profile-label { font-family: 'Unbounded', sans-serif; font-size: .9rem; font-weight: 700; margin-bottom: 8px; }
 .profile-genre-list { display: flex; flex-wrap: wrap; gap: 8px; }
 .genre-tag { border: 2px solid #e08090; border-radius: 30px; padding: 6px 14px;
-  background: #f9c6d0; font-family: 'Comfortaa', sans-serif; font-size: .85rem; }
+  background: #f9c6d0; font-family: 'DM Sans', sans-serif; font-size: .85rem; }
 .profile-bio-label { font-family: 'Unbounded', sans-serif; font-size: .9rem; font-weight: 700; }
 .profile-bio-box { border: 2px solid var(--border); border-radius: 14px; padding: 16px;
-  min-height: 80px; background: #fff; font-family: 'Comfortaa', sans-serif; }
+  min-height: 80px; background: #fff; font-family: 'DM Sans', sans-serif; }
 .profile-actions { display: flex; justify-content: space-between; align-items: center; }
 .profile-logout { background: none; border: none; color: var(--gray); cursor: pointer;
-  font-family: 'Comfortaa', sans-serif; font-size: .9rem; text-decoration: underline; }
+  font-family: 'DM Sans', sans-serif; font-size: .9rem; text-decoration: underline; }
 
 
 .profile-fullscreen { position: fixed; inset: 0; background: var(--cream);
