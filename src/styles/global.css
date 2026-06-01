@@ -1,5 +1,5 @@
 /* ── fonts ─────────────────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Unbounded:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Unbounded:wght@400;700;900&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400;1,9..144,700&display=swap');
 :root {
   --yellow: #ebc213;
   --cream:  #fffcc4;
@@ -114,9 +114,14 @@ body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(
 .back-btn:hover    { transform: scale(1.04); }
 
 /* ── mood tab ────────────────────────────────────────────────────────────────── */
-.mood-section      { padding: 40px; margin: 0; width: 100%; }
-.mood-title        { font-family: 'Playfair Display', serif; font-size: 2.6rem; margin-bottom: 10px; font-style: italic; }
-.mood-sub          { color: var(--gray); margin-bottom: 28px; line-height: 1.6; font-size: 1.05rem; }
+.mood-section      { padding: 40px; margin: 0; width: 100%; position: relative; }
+.mood-layout       { position: relative; }
+.mood-layout-left  { width: 100%; }
+.mood-hero-img     { position: absolute; top: -30px; right: -40px; width: 340px;
+                     mix-blend-mode: multiply; image-rendering: pixelated; pointer-events: none; }
+.mood-title        { font-family: 'Fraunces', serif; font-size: 3rem; font-weight: 700;
+                     margin-bottom: 10px; line-height: 1.2; }
+.mood-sub          { color: var(--gray); line-height: 1.6; font-size: 1.05rem; margin-bottom: 28px; max-width: 600px; }
 .mood-textarea     { width: 100%; border: 2px solid #e8d97a; border-radius: 14px; padding: 18px 22px;
                      font-family: 'Nunito', sans-serif; font-size: 1.05rem; background: var(--cream2);
                      resize: vertical; min-height: 130px; outline: none; transition: border .2s; }

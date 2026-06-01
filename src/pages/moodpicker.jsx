@@ -2,7 +2,6 @@ import { useState } from "react";
 import { callClaude, buildMoodPrompt } from "../api/claude";
 import { Spinner } from "../components/spinner";
 
-// strip CJK / Hiragana / Katakana / Korean
 const cleanReason = (text) =>
   text?.replace(/[぀-ヿ一-鿿가-힯㐀-䶿]/g, "").trim() || text;
 
@@ -80,27 +79,30 @@ export const MoodPicker = () => {
 
   return (
     <div className="mood-section">
-      <div className="mood-title">📖 Книга під настрій</div>
-      <div className="mood-sub">
-        Опишіть свій настрій, що вас цікавить або що ви хочете відчути після читання —
-        AI підбере ідеальну книгу!
+      <div className="mood-layout">
+        <div className="mood-layout-left">
+          <div className="mood-title">Книга під настрій</div>
+          <div className="mood-sub">
+            Опишіть свій настрій, що вас цікавить або що ви хочете відчути після читання —
+            AI підбере ідеальну книгу!
+          </div>
+          <textarea
+            className="mood-textarea"
+            placeholder='Наприклад: «Хочу щось захопливе з детективним сюжетом, але не надто темне. Люблю несподіваний фінал...»'
+            value={mood}
+            onChange={(e) => setMood(e.target.value)}
+            rows={5}
+          />
+          <button
+            className="mood-btn"
+            onClick={handleSubmit}
+            disabled={loading || !mood.trim()}
+          >
+            {loading ? "Підбираємо…" : "✨ Підібрати книгу"}
+          </button>
+        </div>
+        <img src="/images/NoteGPT_Image_20260528200419.png" alt="" className="mood-hero-img" />
       </div>
-
-      <textarea
-        className="mood-textarea"
-        placeholder='Наприклад: «Хочу щось захопливе з детективним сюжетом, але не надто темне. Люблю несподіваний фінал...»'
-        value={mood}
-        onChange={(e) => setMood(e.target.value)}
-        rows={5}
-      />
-
-      <button
-        className="mood-btn"
-        onClick={handleSubmit}
-        disabled={loading || !mood.trim()}
-      >
-        {loading ? "Підбираємо…" : "✨ Підібрати книгу"}
-      </button>
 
       {loading && <Spinner />}
       {error && <div className="mood-error">{error}</div>}
