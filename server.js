@@ -212,4 +212,7 @@ app.get("/api/cover", async (req, res) => {
   }
 });
 
-app.listen(port, () => console.log(`Server listening on port ${port}`));
+app.listen(port, () => console.log(`Server listening on port ${port}`)).on('error', e => console.error('Listen error:', e));
+process.on('uncaughtException', e => console.error('CRASH:', e));
+process.on('unhandledRejection', e => console.error('REJECT:', e));
+process.stdin.resume();
